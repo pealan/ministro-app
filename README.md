@@ -4,9 +4,9 @@
 
 This is the source code for the [MinSaudeBot](twitter.com/MinSaudeBot) Twitter bot account. This bot used to post how many days Brazil didn't have a Minister of Health during the COVID-19 pandemic. It also posted, in the same tweet, updated values for the pandemic inside Brazil (total cases and deaths). The bot posted everyday at 13:00 GMT. 
 
-The days without a Minister of Health were calculated everytime according to the last Minister's last day of term. The Brazil COVID-19 data was fetched from the same API https://covid.saude.gov.br/ used. 
+The days without a Minister of Health were calculated everytime according to the last Minister's last day of term. The Brazil COVID-19 data was fetched from the same API https://covid.saude.gov.br/ used. The tweet was made with [Tweepy](https://www.tweepy.org/), using the Twitter API tokens.
 
-The project was structured with [SAM](https://aws.amazon.com/pt/serverless/sam/), which will be further explained using the official SAM documentation at [Project Structure](#Project structure)
+The project was structured with [SAM](https://aws.amazon.com/pt/serverless/sam/), which will be further explained using the official SAM documentation at [Project Structure](#Project Structure)
 
 ## Adapting your solution
 

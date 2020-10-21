@@ -6,7 +6,7 @@ This is the source code for the [MinSaudeBot](twitter.com/MinSaudeBot) Twitter b
 
 The days without a Minister of Health were calculated everytime according to the last Minister's last day of term. The Brazil COVID-19 data was fetched from the same API https://covid.saude.gov.br/ used. The tweet was made with [Tweepy](https://www.tweepy.org/), using the Twitter API tokens.
 
-The project was structured with [SAM](https://aws.amazon.com/pt/serverless/sam/), which will be further explained using the official SAM documentation at [Project Structure](#Project Structure)
+The project was structured with [SAM](https://aws.amazon.com/pt/serverless/sam/), which will be further explained using the official SAM documentation at **Project Structure** section
 
 ## Adapting your solution
 

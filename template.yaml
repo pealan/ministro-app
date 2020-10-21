@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  ministro-app
+
+  SAM Template for ministro-app
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 900
+
+Resources:
+  MinistroFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: ministro_tweet/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      EventInvokeConfig:
+        MaximumRetryAttempts: 2
+        DestinationConfig:
+          OnFailure: 
+            Type: SNS
+            Destination:
+              Ref: AlarmTopic
+      Events:
+        Tweet:
+          Type: Schedule # More info about Schedule Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
+          Properties:
+            Schedule: cron(0 13 * * ? *)
+            Name: ministro-schedule-event
+            Description: This schedule fires the MinistroFunction every day at 10 A.M (GMT -03:00)
+            Enabled: True
+  
+  AlarmTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+      - Endpoint: pealan97@gmail.com
+        Protocol: email
+
